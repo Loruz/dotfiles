@@ -1,0 +1,51 @@
+#!/bin/bash
+# Made by Stormy
+# Get the last tag, increment major, minor or patch version and push it
+declare -a valid_versions=('major' 'minor' 'patch')
+CURTAG=`git fetch --tags && git tag -l --sort=-creatordate | head -1`
+CURTAG="${CURTAG/v/}"
+IFS='.' read -a vers <<< "$CURTAG"
+MAJ=${vers[0]}
+MIN=${vers[1]}
+PATCH=${vers[2]}
+array_contains()
+{
+  for element in "${valid_versions[@]}"; do
+    if [[ $element = "$@" ]]; then
+      return 1
+    fi
+  done
+  return 0
+}
+if [ $# -ne 1 ] || array_contains $@ ; then
+  printf "Current tag: $CURTAG\nValid flags:\n
+  \tmajor - Change first digit ($(($MAJ+1)).0.0)\n
+  \tminor - Change second digit ($MAJ.$(($MIN+1)).0)\n
+  \tpatch - Change last digit ($MAJ.$MIN.$(($PATCH+1)))\n
+    " >&2
+  exit 1
+fi
+echo "Current Tag: $MAJ.$MIN.$PATCH"
+for cmd in "$@"
+do
+  case $cmd in
+    "major")
+      ((MAJ+=1))
+      MIN=0
+      PATCH=0
+      echo "Incrementing Major Version"
+      ;;
+    "minor")
+      ((MIN+=1))
+      PATCH=0
+      echo "Incrementing Minor Version"
+      ;;
+    "patch")
+      ((PATCH+=1))
+      echo "Incrementing Patch Version"
+      ;;
+  esac
+done
+NEWTAG="$MAJ.$MIN.$PATCH"
+echo "Adding tag: $NEWTAG"
+git tag $NEWTAG && git push --tags

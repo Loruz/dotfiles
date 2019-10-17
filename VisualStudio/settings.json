@@ -1,0 +1,35 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "extensions.ignoreRecommendations": true,
+    "window.zoomLevel": 0,
+    "explorer.confirmDragAndDrop": false,
+    "editor.formatOnSave": false,
+// Enable per-language
+    "[javascript]": {
+        "editor.formatOnSave": true
+    },
+    "[html]": {
+        "editor.formatOnSave": true
+    },
+    "[css]": {
+        "editor.formatOnSave": true
+    },
+    "emmet.includeLanguages": {
+        "edge": "html"
+    },
+    "terminal.integrated.fontFamily": "DejaVu Sans Mono for Powerline",
+    "workbench.startupEditor": "newUntitledFile",
+    "breadcrumbs.enabled": true,
+    "prettier.semi": false,
+    "prettier.singleQuote": true,
+    "prettier.tabWidth": 4,
+    "prettier.trailingComma": "es5",
+    "prettier.useTabs": true,
+    "editor.fontFamily": "Menlo",
+    "editor.fontLigatures": true,
+    "emmet.triggerExpansionOnTab": true,
+    "workbench.colorTheme": "Darktooth",
+    "editor.fontWeight": "400",
+    "terminal.integrated.rendererType": "dom",
+    "[javascriptreact]": {},
+}
