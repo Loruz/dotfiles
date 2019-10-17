@@ -1,0 +1,18 @@
+# taps
+tap 'homebrew/cask'
+tap 'mongodb/brew'
+
+# casks
+
+# packages
+brew 'node'
+brew 'git'
+brew 'git-flow'
+brew 'composer'
+brew 'mariadb'
+brew 'php'
+brew 'php@7.1'
+brew 'php@7.2'
+brew 'redis'
+brew 'go'
+brew 'mongodb'
