@@ -1,35 +1,82 @@
-// Place your settings in this file to overwrite the default settings
 {
-    "extensions.ignoreRecommendations": true,
-    "window.zoomLevel": 0,
-    "explorer.confirmDragAndDrop": false,
-    "editor.formatOnSave": false,
-// Enable per-language
-    "[javascript]": {
-        "editor.formatOnSave": true
-    },
-    "[html]": {
-        "editor.formatOnSave": true
-    },
-    "[css]": {
-        "editor.formatOnSave": true
-    },
-    "emmet.includeLanguages": {
-        "edge": "html"
-    },
-    "terminal.integrated.fontFamily": "DejaVu Sans Mono for Powerline",
-    "workbench.startupEditor": "newUntitledFile",
-    "breadcrumbs.enabled": true,
-    "prettier.semi": false,
-    "prettier.singleQuote": true,
-    "prettier.tabWidth": 4,
-    "prettier.trailingComma": "es5",
-    "prettier.useTabs": true,
-    "editor.fontFamily": "Menlo",
-    "editor.fontLigatures": true,
-    "emmet.triggerExpansionOnTab": true,
-    "workbench.colorTheme": "Darktooth",
-    "editor.fontWeight": "400",
-    "terminal.integrated.rendererType": "dom",
-    "[javascriptreact]": {},
+	"extensions.ignoreRecommendations": true,
+	"window.zoomLevel": 0,
+	"explorer.confirmDragAndDrop": false,
+	"editor.formatOnSave": true,
+	"editor.defaultFormatter": "esbenp.prettier-vscode",
+	"editor.codeActionsOnSave": {
+		"source.fixAll.eslint": "always",
+	},
+	"[javascript]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "esbenp.prettier-vscode",
+	},
+	"[html]": {
+		"editor.formatOnSave": true,
+	},
+	"[css]": {
+		"editor.formatOnSave": true,
+	},
+	"[astro]": {
+		"editor.formatOnSave": true,
+		"editor.defaultFormatter": "astro-build.astro-vscode",
+	},
+	"[vue]": {
+		"editor.defaultFormatter": "Vue.volar",
+	},
+	"[prisma]": {
+		"editor.defaultFormatter": "Prisma.prisma",
+	},
+	"[javascriptreact]": {},
+	"emmet.includeLanguages": {
+		"javascript": "javascriptreact",
+	},
+	"emmet.syntaxProfiles": {
+		"javascript": "jsx",
+	},
+	"emmet.triggerExpansionOnTab": true,
+	"terminal.integrated.fontFamily": "DejaVu Sans Mono for Powerline",
+	"workbench.startupEditor": "newUntitledFile",
+	"workbench.colorTheme": "Ayu Mirage Bordered",
+	"workbench.iconTheme": "icons",
+	"breadcrumbs.enabled": true,
+	"prettier.singleQuote": true,
+	"prettier.tabWidth": 4,
+	"prettier.trailingComma": "es5",
+	"prettier.useTabs": true,
+	"editor.fontFamily": "Menlo",
+	"editor.fontLigatures": true,
+	"editor.fontWeight": "400",
+	"typescript.updateImportsOnFileMove.enabled": "always",
+	"diffEditor.ignoreTrimWhitespace": false,
+	"svelte.enable-ts-plugin": true,
+	"python.defaultInterpreterPath": "python3",
+	"files.associations": {
+		"*.tsx": "typescriptreact",
+	},
+	"explorer.fileNesting.patterns": {
+		"*.ts": "${capture}.js",
+		"*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+		"*.jsx": "${capture}.js",
+		"*.tsx": "${capture}.ts",
+		"tsconfig.json": "tsconfig.*.json",
+		"package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
+		"*.sqlite": "${capture}.${extname}-*",
+		"*.db": "${capture}.${extname}-*",
+		"*.sqlite3": "${capture}.${extname}-*",
+		"*.db3": "${capture}.${extname}-*",
+		"*.sdb": "${capture}.${extname}-*",
+		"*.s3db": "${capture}.${extname}-*",
+	},
+	"code-runner.executorMap": {
+		"javascript": "node",
+		"python3": "python3 -u",
+		"go": "go run",
+		"rust": "cd $dir && rustc $fileName && $dir$fileNameWithoutExt",
+		"typescript": "ts-node",
+		"shellscript": "bash",
+	},
+	"json.schemas": [],
+	"RainbowBrackets.depreciation-notice": false,
+	"claudeCode.preferredLocation": "panel",
 }
